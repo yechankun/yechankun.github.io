@@ -2,7 +2,7 @@ name: "Automatic build"
 on:
   push:
     branches:
-      - redniche_blog
+      - redniche_blog_5.1
     paths-ignore:
       - .gitignore
       - README.md
