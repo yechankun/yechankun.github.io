@@ -208,6 +208,11 @@ jekyll_compose:
       category:
       tags: ["니체"]
     posts:
+      author:
+        name: redniche yechankun
+        link: https://github.com/redniche
+      math: true
+      mermaid: true
       description:
       image:
       categories:
