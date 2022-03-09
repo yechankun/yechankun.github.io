@@ -1,7 +1,10 @@
 ---
 name: Question
 about: Ask whatever you want
+title: ''
 labels: question
+assignees: ''
+
 ---
 
 <!-- NOTE: Please maintain all sections, otherwise the issue will be automatically closed :) -->

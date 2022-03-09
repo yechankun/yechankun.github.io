@@ -1,7 +1,10 @@
 ---
 name: Feature Request
 about: Suggest an idea for this project
+title: ''
 labels: enhancement
+assignees: ''
+
 ---
 
 <!-- NOTE: Please maintain all sections, otherwise the issue will be automatically closed :) -->

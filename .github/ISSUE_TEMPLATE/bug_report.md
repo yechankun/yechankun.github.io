@@ -1,6 +1,10 @@
 ---
 name: Bug Report
 about: Create a report to help us improve
+title: ''
+labels: ''
+assignees: ''
+
 ---
 
 <!-- NOTE: Please maintain all sections, otherwise the issue will be automatically closed :) -->
