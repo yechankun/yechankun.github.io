@@ -1,20 +1,22 @@
 .jekyll-linkpreview-wrapper {
-  max-width: 1200px;
-  margin-top: 0px;
-  margin-bottom: 10px;
+  min-width: 200px;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+.jekyll-linkpreview-custom {
+  padding: 12px;
 }
 
 .jekyll-linkpreview-wrapper-inner {
-  border: 1px solid rgb(255, 255, 255);
+  border: 2px solid rgba(255, 255, 255, 0.836);
   padding: 12px;
-  background-color: rgb(255, 255, 255);
 }
 
 .jekyll-linkpreview-content {
   position: relative;
-  height: 80px;
-  /* overflow: hidden; */
-  margin-top: 0px;
+  height: 100px;
+  overflow: hidden;
   margin-bottom: 10px;
 }
 
@@ -24,30 +26,49 @@
   right: 0;
 }
 
+.jekyll-linkpreview-custom-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.jekyll-linkpreview-custom-image img {
+  margin: 0 0;
+  width: 100px;
+  height: 100px;
+}
+
 .jekyll-linkpreview-image img {
-  width: 130px;
-  height: 130px;
+  width: 100px;
+  height: 100px;
+}
+
+.jekyll-linkpreview-custom-body {
+  margin-top: 10px;
+  position: absolute;
+  left: 120px;
 }
 
 .jekyll-linkpreview-body {
-  margin-top: 5px;
-  margin-right: 200px;
+  margin-right: 110px;
 }
 
-h2.jekyll-linkpreview-title {
-  font-size: 20px;
-  margin-top: 2px !important;
+.jekyll-linkpreview-body-nog {
+  margin-right: 10px;
+}
+
+.jekyll-linkpreview-title {
+  font-size: 17px;
+  margin-top: 0px !important;
   margin: 0 0 2px;
   line-height: 1.3;
-  /* display:block; Add this  */
 }
 
 .jekyll-linkpreview-description {
   line-height: 1.5;
   font-size: 13px;
-  margin-top: 10px;
 }
 
 .jekyll-linkpreview-footer {
-  font-size: 0px;
+  font-size: 11px;
 }
