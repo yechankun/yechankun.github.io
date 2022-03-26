@@ -1,21 +1,21 @@
 ---
 layout: page
-refactor: true
-pannel_includes:
-  - toc
-tail_includes:
-  - related-posts
-  - post-nav
-  - comments
 ---
 
 {% include lang.html %} {% if page.image.src %} {% capture bg %} {% unless
-page.image.no_bg %}{{ 'bg' }}{% endunless %} {% endcapture %} <img src="{{
-page.image.src }}" class="preview-img {{ bg | strip }}" alt="{{ page.image.alt |
-default: "Preview Image" }}" {% if page.image.width %} width="{{
-page.image.width }}" {% elsif page.image.w %} width="{{ page.image.w }}" {%
-endif %} {% if page.image.height %} height="{{ page.image.height }}" {% elsif
-page.image.h %} height="{{ page.image.h }}" {% endif %}> {% endif %}
+page.image.no_bg %}{{ 'bg' }}{% endunless %} {% endcapture %}
+<!-- Customized css -->
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="/assets/css/linkpreview.css"
+  media="screen"
+/>
+<img src="{{ page.image.src }}" class="preview-img {{ bg | strip }}" alt="{{
+page.image.alt | default: "Preview Image" }}" {% if page.image.width %}
+width="{{ page.image.width }}" {% elsif page.image.w %} width="{{ page.image.w
+}}" {% endif %} {% if page.image.height %} height="{{ page.image.height }}" {%
+elsif page.image.h %} height="{{ page.image.h }}" {% endif %}> {% endif %}
 
 <h1 data-toc-skip>{{ page.title }}</h1>
 
