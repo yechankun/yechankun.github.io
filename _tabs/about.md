@@ -15,7 +15,7 @@ order: 4
 
 ---
 
-## 👋🏻 안녕하세요! <span style="background: #a55ef4;">몰입하는 개발자</span> 장예찬입니다.
+## 👋🏻 안녕하세요! <span style="background: #a55ef4;">일단 해보는 개발자</span> 장예찬입니다.
 
 ```json
 {
@@ -37,11 +37,11 @@ order: 4
 
 모르는 무언가가 있을 때는 혼자 고민하지 않고 주변인과 동료들에게 물어보며, 어떻게든 **지적 욕구**를 채우는 **욕심**이 있습니다. 또한 얻게 된 **정보**를 혼자만의 것이 아닌 주변과 **공유**하여 **모두 같이 성장**하는 것을 지향하고 있습니다.
 
-## 경력
+## 🌌 Career
 
 앞으로 쌓아가고 싶습니다.
 
-## 학력
+## 🏛 University
 
 <div class="jekyll-linkpreview-custom">    
     <div class="jekyll-linkpreview-content">
@@ -60,7 +60,16 @@ order: 4
     </div>
 </div>
 
-## 능력
+## 🏆 Award
+
+[수상 기록 상세 링크](https://redniche.github.io/posts/%EC%88%98%EC%83%81%EA%B8%B0%EB%A1%9D-%EB%AA%A8%EC%9D%8C/)
+
+2022 |삼성 청년 SW 아카데미 | 공통 프로젝트 최우수상
+2021 | 삼성 청년 SW 아카데미 | 프로젝트 우수상
+2021 | 삼성 청년 SW 아카데미 | 성적 우수상
+2018 | 육군혁신 아이디어 콘테스트 | 여단장 표창
+
+## 🌠 Skill
 
 <table>
     <tr>
@@ -101,7 +110,7 @@ order: 4
         <img src="https://img.shields.io/badge/SPA프레임워크(라이브러리)-React ^17-A07ACC?style=flat&logo=React&logoColor=white">
         <img src="https://img.shields.io/badge/SPA프레임워크-Vue ^2-A07ACC?style=flat&logo=Vue.js&logoColor=white">
         <br/>
-        <img src="https://img.shields.io/badge/블록체인 프레임워크-Truffle 5.5.6-007A1C?style=flat&logo=Truffle&
+        <img src="https://img.shields.io/badge/블록체인 프레임워크-Truffle 5.5.6-A07ACC?style=flat&logo=Truffle&
         logoColor=white">
         <br/>
         <img src="https://img.shields.io/badge/서버 프레임워크-Django 1.11-A07ACC?style=flat&logo=Django&logoColor=white">
@@ -121,6 +130,8 @@ order: 4
         <img src="https://img.shields.io/badge/IDE-PyCharm-007A1C?style=flat&logo=PyCharm&
         logoColor=white">
         <br/>
+        <img src="https://img.shields.io/badge/웹디자인-Vutify-5575FF?style=flat&logo=Vue.js&logoColor=white">
+        <img src="https://img.shields.io/badge/웹디자인-BootStrap-5575FF?style=flat&logo=BootStrap&logoColor=white">
         <img src="https://img.shields.io/badge/Ethereum IDE-Remix IDE-551166?style=flat&logo=Truffle&
         logoColor=white">
         <br/>
@@ -160,14 +171,143 @@ order: 4
         <img src="https://img.shields.io/badge/빌드 및 관리-Maven-A07ACC?style=flat&logo=Apache Maven&logoColor=white">
         <img src="https://img.shields.io/badge/패키지관리-Yarn-A07ACC?style=flat&logo=Yarn&logoColor=white">
         <img src="https://img.shields.io/badge/패키지관리-npm-A07ACC?style=flat&logo=npm&logoColor=white">
+        <br/>
+        <img src="https://img.shields.io/badge/포매터-Prettier-007500?style=flat&logo=Prettier&logoColor=white">
+        <img src="https://img.shields.io/badge/린트-Eslint-007500?style=flat&logo=Eslint&logoColor=white">
+        <img src="https://img.shields.io/badge/정적분석-CheckStyle-007500?style=flat&logo=Eslint&logoColor=white">
+        <br/>
+        <img src="https://img.shields.io/badge/API테스트-Postman-FF75FF?style=flat&logo=Postman&logoColor=white">
+        <img src="https://img.shields.io/badge/프로토타입 설계-Figma-FF75FF?style=flat&logo=Figma&logoColor=white">
+        <br/>
+        <img src="https://img.shields.io/badge/그외-Adobe Photoshop-5575FF?style=flat&logo=Adobe Photoshop&logoColor=white">
+        <img src="https://img.shields.io/badge/그외-Blender-5575FF?style=flat&logo=Blender&logoColor=white">
+        <img src="https://img.shields.io/badge/그외-Microsoft Excel-5575FF?style=flat&logo=Microsoft Excel&logoColor=white">
         </td>
     </tr>
     <tr>
         <td>비고</td>
             <td>
-            Aphache, Spring thymeleaf, Django Templete은 매우 예전에 경험했습니다.
+            Android, Aphache, Spring thymeleaf, Django Templete은 매우 예전에 경험했습니다.
             <br/> 
             GitHub Action은 겉햝기로 사용하고 있습니다.
         </td>
     </tr>
 </table>
+
+### Server
+
+<section class="section">
+    <div class="box">
+        <strong class="box_title">Java</strong>
+        <ul class="list">
+            <li class="item">객체지향을 이용해 중복코드의 최소화를 지향합니다.</li>
+            <li class="item">객체의 생성에 빌더 패턴을 활용합니다.</li>
+            <li class="item">인터페이스와 상속을 통해 개방-폐쇄 원칙에 입각한 개발을 선호합니다.</li>
+        </ul>
+    </div>
+    <div class="box">
+        <strong class="box_title">Spring Boot</strong>
+        <ul class="list">
+            <li class="item">MVC 패턴에 익숙합니다.</li>
+            <li class="item">JPA와 Mybatis를 이용한 ORM을 구성할 줄 압니다.</li>
+            <li class="item">정적분석을 활용해 Google의 표준으로 읽기 쉬운 코드를 작성하기 시작했습니다.</li>
+            <li class="item">Gradle에 만들어져 있는 플러그인을 활용할 수 있습니다.</li>
+        </ul>
+    </div>
+    <div class="box">
+        <strong class="box_title">Solidity</strong>
+        <ul class="list">
+            <li class="item">ERC20, ERC721 과 같은 이더리움 표준을 이해하고 있습니다.</li>
+            <li class="item">표준을 위한 인터페이스를 작성할 줄 압니다.</li>
+            <li class="item">접근 제한 패턴, 팩토리 패턴 등의 디자인패턴으로 구현할 수 있습니다.</li>
+        </ul>
+    </div>
+</section>
+
+### Web
+
+<section class="section">
+    <div class="box">
+        <strong class="box_title">React</strong>
+        <ul class="list">
+            <li class="item">함수형 컴포넌트 작성을 선호합니다.</li>
+            <li class="item">Hook을 이용한 상태관리, Redux를 이용한 전역 상태관리를 선호합니다.</li>
+        </ul>
+    </div>
+    <div class="box">
+        <strong class="box_title">Vue.js</strong>
+        <ul class="list">
+            <li class="item">Material design을 선호합니다.</li>
+            <li class="item">Vuex를 이용한 상태관리를 선호합니다.</li>
+        </ul>
+    </div>
+    <div class="box">
+        <strong class="box_title">JavaScript</strong>
+        <ul class="list">
+            <li class="item">ES6 문법에 익숙합니다.</li>
+            <li class="item">npm/yarn 을 이용한 패키지 관리에 익숙합니다.</li>
+            <li class="item">선언형 프로그래밍을 선호합니다.</li>
+            <li class="item">Web3.js를 이용한 DApp 개발이 가능합니다.</li>
+        </ul>
+    </div>
+    <div class="box">
+        <strong class="box_title">HTML/CSS</strong>
+        <ul class="list">
+            <li class="item">시맨틱 마크업 작성을 선호합니다.</li>
+            <li class="item">명세서에 기반한 UI 구현이 가능합니다.</li>
+            <li class="item">높은 접근성을 추구합니다.</li>
+        </ul>
+    </div>
+</section>
+
+### Infra
+
+<section class="section">
+    <div class="box">
+        <strong class="box_title">Cloud 활용</strong>
+        <ul class="list">
+            <li class="item">EC2와 같은 환경에 Private Key를 활용해 접속하는 것을 선호합니다.</li>
+            <li class="item">EC2에서 Ubuntu 인스턴스 생성을 해보았습니다.</li>
+            <li class="item">Ubuntu 환경에서 패키지를 설치하고 도커환경을 구성할 줄 압니다.</li>
+        </ul>
+    </div>
+    <div class="box">
+        <strong class="box_title">Docker</strong>
+        <ul class="list">
+            <li class="item">docker-compose를 사용할 줄 압니다.</li>
+            <li class="item">Jenkins, MySql, jar, IPFS 등을 도커 컨테이너로 생성할 줄 압니다.</li>            
+        </ul>
+    </div>
+    <div class="box">
+        <strong class="box_title">Jenkins</strong>
+        <ul class="list">
+            <li class="item">Webhook을 이용해 Git에 지속적 통합과 배포를 할 수 있습니다.</li>
+        </ul>
+    </div>
+    <div class="box">
+        <strong class="box_title">IPFS</strong>
+        <ul class="list">
+            <li class="item">go-ipfs 노드를 구성할 줄 압니다.</li>
+            <li class="item">ipfs-cluster를 docker-compose를 활용해 클러스터 환경을 구성할 줄 압니다.</li>
+            <li class="item">CORS 설정과 Private Key설정을 할 수 있습니다.</li>
+        </ul>
+    </div>
+</section>
+
+### ETC
+
+<section class="section">
+    <div class="box">
+        <strong class="box_title">그 외</strong>
+        <ul class="list">
+            <li class="item">git-flow를 이해하고 있습니다.</li>
+            <li class="item">여러 분야의 지식으로 전체적인 프로젝트 관리가 가능합니다.</li>
+            <li class="item">SCSS도 약간 쓸 줄 압니다. (이 페이지 li에도 활용됨) </li>
+            <li class="item">Excel로 매크로 작성, 간단한 프로그램 제작이 가능합니다.</li>
+            <li class="item">Jira, Notion 등을 활용한 애자일 프로세스에 익숙합니다.</li>
+            <li class="item">리액티브 프로그래밍, 함수형 프로그래밍 같은 최신 패러다임을 일부 이해하고 있습니다.</li>
+            <li class="item">최근엔 한 가지를 주력하려고 노력하고 있습니다.</li>
+            <li class="item">사소한 문제라도 같이 해결해 나가는 것을 좋아합니다.</li>
+        </ul>
+    </div>
+</section>

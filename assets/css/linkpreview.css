@@ -4,10 +4,6 @@
   margin-bottom: 20px;
 }
 
-.jekyll-linkpreview-custom {
-  padding: 12px;
-}
-
 .jekyll-linkpreview-wrapper-inner {
   border: 2px solid rgba(255, 255, 255, 0.836);
   padding: 12px;
@@ -26,27 +22,9 @@
   right: 0;
 }
 
-.jekyll-linkpreview-custom-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.jekyll-linkpreview-custom-image img {
-  margin: 0 0;
-  width: 100px;
-  height: 100px;
-}
-
 .jekyll-linkpreview-image img {
   width: 100px;
   height: 100px;
-}
-
-.jekyll-linkpreview-custom-body {
-  margin-top: 10px;
-  position: absolute;
-  left: 120px;
 }
 
 .jekyll-linkpreview-body {
