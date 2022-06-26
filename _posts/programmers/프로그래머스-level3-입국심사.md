@@ -2,6 +2,11 @@
 layout: post
 title: 프로그래머스 level3 입국심사
 date: 2022-06-26 14:59 +0900
+description:
+image:
+categories: 알고리즘 프로그래머스
+tags: 니체 예찬군 알고리즘 프로그래머스 이분탐색 LEVEL3
+sitemap: true
 ---
 
 ### **문제 설명**
