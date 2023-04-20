@@ -32,10 +32,10 @@ description: >- # used by seo meta and the atom feed
   A minimal, responsive, and powerful Jekyll theme for presenting professional writing.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: "https://redniche.github.io"
+url: "https://yechankun.github.io"
 
 github:
-  username: redniche # change to your github username
+  username: yechankun # change to your github username
 
 twitter:
   username: # change to your twitter username
@@ -43,12 +43,12 @@ twitter:
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: redniche
+  name: yechankun
   email: redniche@naver.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
     # - https://twitter.com/username # change to your twitter homepage
-    - https://github.com/redniche # change to your github homepage
+    - https://github.com/yechankun # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
@@ -59,7 +59,7 @@ google_site_verification: # fill in to your verification string
 # The end of `jekyll-seo-tag` settings
 
 google_analytics:
-  id: # fill in your Google Analytics ID
+  id: G-Z52C839EYH # fill in your Google Analytics ID
   # Google Analytics pageviews report settings
   pv:
     proxy_endpoint: # fill in the Google Analytics superProxy endpoint of Google App Engine
@@ -213,7 +213,7 @@ jekyll_compose:
     posts:
       author:
         name: redniche yechankun
-        link: https://github.com/redniche
+        link: https://github.com/yechankun
       math: true
       mermaid: true
       description:
