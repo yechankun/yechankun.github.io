@@ -2,27 +2,15 @@
   The Top Bar
 -->
 
-<div id="topbar-wrapper" class="row justify-content-left">
-  <div id="topbar" class="col-11 d-flex h-100 align-items-center justify-content-between ml-3">
+<div id="topbar-wrapper" class="row">
+  <div id="topbar" class="col-11 d-flex h-100 align-items-center ml-3">
     <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i>
-    <div id="topbar-title">
-      <!-- {% if page.layout == 'home' %}
-        {{- site.data.locales[lang].title | default: site.title -}}
-      {% elsif page.collection == 'tabs' or page.layout == 'page' %}
-        {%- capture tab_key -%}{{ page.url | split: '/' }}{%- endcapture -%}
-        {{- site.data.locales[lang].tabs[tab_key] | default: page.title -}}
-      {% else %}
-        {{- site.data.locales[lang].layout[page.layout] | default: page.layout | capitalize -}}
-      {% endif %} -->
-
-      {{- site.data.locales[lang].title | default: site.title -}}
-    </div>
     <span id="breadcrumb">
     {% assign paths = page.url | split: '/' %}
 
     {% if paths.size == 0 or page.layout == 'home' %}
       <!-- index page -->
-      <span>{{ site.data.locales[lang].tabs.home | capitalize }}</span>
+      <span>{{ site.data.locales[lang].title | default: site.title | capitalize }}</span>
 
     {% else %}
 
@@ -31,7 +19,7 @@
         {% if forloop.first %}
           <span>
             <a href="{{ '/' | relative_url }}">
-              {{ site.data.locales[lang].tabs.home | capitalize }}
+              {{ site.data.locales[lang].title | default: site.title  | capitalize }}
             </a>
           </span>
 
@@ -62,7 +50,7 @@
 
     </span><!-- endof #breadcrumb -->
 
-    <div class="search-elements-group d-flex align-items-center">
+    <div class="search-elements-group d-flex align-items-center ml-auto">
       <i id="search-trigger" class="fas fa-search fa-fw"></i>
       <span id="search-wrapper" class="align-items-center">
         <i class="fas fa-search fa-fw"></i>

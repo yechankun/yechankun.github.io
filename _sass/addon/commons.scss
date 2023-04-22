@@ -1272,7 +1272,10 @@ $sidebar-display: "sidebar-display";
 
   #breadcrumb,
   #search-wrapper {
-    display: none;
+    // 무조건 한줄이어야 함
+    white-space: nowrap;
+    // 가로로 오버플로우시 스크롤바가 생김
+    overflow-x: auto;
   }
 
   #main > div.row:first-child > div:nth-child(1),
