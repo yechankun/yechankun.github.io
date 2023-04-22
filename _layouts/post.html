@@ -81,7 +81,7 @@ elsif page.image.h %} height="{{ page.image.h }}" {% endif %}> {% endif %}
       href="{{ site.baseurl }}/categories/{{ category | slugify | url_encode }}/"
       >{{ category }}</a
     >
-    {%- unless forloop.last -%}, {%- endunless -%} {% endfor %}
+    {%- unless forloop.last -%} > {%- endunless -%} {% endfor %}
   </div>
   {% endif %}
 
