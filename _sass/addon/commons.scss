@@ -755,7 +755,7 @@ $sidebar-display: "sidebar-display";
       &:last-child {
         a {
           position: relative;
-          left: $cursor-width / 2;
+          left: calc($cursor-width / 2);
           width: 100%;
         }
 
@@ -781,7 +781,7 @@ $sidebar-display: "sidebar-display";
 
     @for $i from 1 through $tab-count {
       $offset: $tab-count - $i;
-      $top: -$offset * $tab-height + ($tab-height - $tab-cursor-height) / 2;
+      $top: -$offset * $tab-height + calc(($tab-height - $tab-cursor-height) / 2);
 
       @if $i < $tab-count {
         > li.active:nth-child(#{$i}),
@@ -923,7 +923,7 @@ $sidebar-display: "sidebar-display";
 
 #sidebar-trigger,
 #search-trigger {
-  display: none;
+  display: block;
 }
 
 #search-wrapper {
@@ -1209,55 +1209,61 @@ $sidebar-display: "sidebar-display";
   #main-wrapper {
     padding-bottom: $footer-height;
   }
+ 
+}
 
+@mixin slide($append: null) {
+  $basic: transform 0.4s ease;
+  @if $append {
+    -webkit-transition: $basic, $append;
+    transition: $basic, $append;
+  } @else {
+    -webkit-transition: $basic;
+    transition: $basic;
+  }
+}
+
+#sidebar {
+  @include slide;
+
+  transform: translateX(-#{$sidebar-width}); /* hide */
+  -webkit-transform: translateX(-#{$sidebar-width});
+
+  .cursor {
+    -webkit-transition: none;
+    -moz-transition: none;
+    transition: none;
+  }
+}
+
+[#{$sidebar-display}] {
+  #sidebar {
+    transform: translateX(0);
+  }
+
+  #topbar-wrapper,
+  #main-wrapper {
+    transform: translateX(#{$sidebar-width});
+  }
+} 
+
+#main-wrapper {
+  @include slide;
+
+  padding-top: $topbar-height;
+}
+
+#topbar-wrapper {
+  @include slide(top 0.2s ease);
+
+  left: 0;
 }
 
 /* hide sidebar and panel */
 @media all and (max-width: 849px) {
-  @mixin slide($append: null) {
-    $basic: transform 0.4s ease;
-    @if $append {
-      -webkit-transition: $basic, $append;
-      transition: $basic, $append;
-    } @else {
-      -webkit-transition: $basic;
-      transition: $basic;
-    }
-  }
-
   html,
   body {
     overflow-x: hidden;
-  }
-
-  [#{$sidebar-display}] {
-    #sidebar {
-      transform: translateX(0);
-    }
-
-    #topbar-wrapper,
-    #main-wrapper {
-      transform: translateX(#{$sidebar-width});
-    }
-  }
-
-  #sidebar {
-    @include slide;
-
-    transform: translateX(-#{$sidebar-width}); /* hide */
-    -webkit-transform: translateX(-#{$sidebar-width});
-
-    .cursor {
-      -webkit-transition: none;
-      -moz-transition: none;
-      transition: none;
-    }
-  }
-
-  #main-wrapper {
-    @include slide;
-
-    padding-top: $topbar-height;
   }
 
   #search-result-wrapper {
@@ -1269,19 +1275,12 @@ $sidebar-display: "sidebar-display";
     display: none;
   }
 
-  #topbar-wrapper {
-    @include slide(top 0.2s ease);
-
-    left: 0;
-  }
-
   #main > div.row:first-child > div:nth-child(1),
   #main > div.row:first-child > div:nth-child(2) {
     margin-top: 0;
   }
 
   #topbar-title,
-  #sidebar-trigger,
   #search-trigger {
     display: block;
   }
@@ -1338,7 +1337,7 @@ $sidebar-display: "sidebar-display";
   }
 
   #main-wrapper {
-    margin-left: $sidebar-width;
+    margin-left: 0;
   }
 
   .profile-wrapper {
@@ -1391,7 +1390,7 @@ $sidebar-display: "sidebar-display";
 /* Compact icons in sidebar & panel hidden */
 @media all and (min-width: 850px) and (max-width: 1199px) {
   #sidebar {
-    width: $sidebar-width-small;
+    width: $sidebar-width;
 
     .site-subtitle {
       margin-left: 1rem;
@@ -1410,13 +1409,9 @@ $sidebar-display: "sidebar-display";
     }
   }
 
-  #topbar-wrapper {
-    left: 210px;
-  }
-
-  #search-results > div {
-    max-width: 700px;
-  }
+  // #search-results > div {
+  //   max-width: 700px;
+  // }
 
   .site-title {
     font-size: 1.3rem;
@@ -1429,9 +1424,9 @@ $sidebar-display: "sidebar-display";
     font-size: 90%;
   }
 
-  #main-wrapper {
-    margin-left: 210px;
-  }
+  // #main-wrapper {
+  //   margin-left: 210px;
+  // }
 
   #breadcrumb {
     width: 65%;
@@ -1473,7 +1468,7 @@ $sidebar-display: "sidebar-display";
 
   #topbar {
     padding: 0;
-    max-width: 1070px;
+    max-width: 100%;
   }
 
   #panel-wrapper {
@@ -1519,10 +1514,11 @@ $sidebar-display: "sidebar-display";
 
 @media all and (min-width: 1400px) {
   #main > div.row {
-    padding-left: calc((100% - #{$main-content-max-width}) / 2);
+    // padding-left: calc((100% - #{$main-content-max-width}) / 2);
+    padding-left: 0;
 
     > div.col-xl-8 {
-      max-width: 850px;
+      max-width: 1100px;
     }
   }
 

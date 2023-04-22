@@ -2,7 +2,7 @@
   The Side Bar
 -->
 
-<div id="sidebar" class="d-flex flex-column align-items-end">
+<div id="sidebar" onmouseenter="showSidebar()" onmouseleave="hideSidebar()" class="d-flex flex-column align-items-end">
   <div class="profile-wrapper text-center">
     <div id="avatar">
       <a href="{{ '/' | relative_url }}" alt="avatar" class="mx-auto">
@@ -91,3 +91,13 @@
   </div> <!-- .sidebar-bottom -->
 
 </div><!-- #sidebar -->
+<script>
+  function showSidebar() {
+    document.getElementById("sidebar").classList.add("expanded");
+  }
+
+  function hideSidebar() {
+    document.getElementById("sidebar").classList.remove("expanded");
+  }
+</script>
+
