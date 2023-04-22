@@ -42,7 +42,7 @@
           {% assign categories = page.categories %}
           {% for category in categories %}
             <span>
-              <a href="{{ site.baseurl }}/categories/{{ category | uri_escape | downcase }}">{{ category }}</a>
+              <a href="{{ site.baseurl }}/categories/{{ category | cgi_escape | downcase }}/">{{ category }}</a>
             </span>
           {% endfor %}
             <span>{{ page.title }}</span>
