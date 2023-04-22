@@ -12,7 +12,6 @@ order: 4
     <tr>
         <td><img src="assets/img/../../../assets/img/zepeto_profile.png" style="width:200px; border-radius:40px; left:10%; min-width:200px"/></td>
         <td style="display: block; max-width: 100%;">
-        {% linkpreview "https://github.com/redniche" %} 
         </td>
     </tr>
 </table>

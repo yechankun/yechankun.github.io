@@ -1553,7 +1553,7 @@ $sidebar-display: "sidebar-display";
   }
 
   #main-wrapper {
-    margin-left: $sidebar-width-large;
+    margin-left: 50px;
   }
 
   #panel-wrapper {
@@ -1561,7 +1561,7 @@ $sidebar-display: "sidebar-display";
   }
 
   #topbar-wrapper {
-    left: $sidebar-width-large;
+    left: 0;
   }
 
   #topbar {
@@ -1573,7 +1573,7 @@ $sidebar-display: "sidebar-display";
   }
 
   #sidebar {
-    width: $sidebar-width-large;
+    width: $sidebar-width;
 
     .profile-wrapper {
       margin-top: 4rem;
@@ -1714,7 +1714,7 @@ $sidebar-display: "sidebar-display";
   }
 
   #main > div.row {
-    padding-left: calc((100% - #{$main-content-max-width} - 2%) / 2);
+    // padding-left: calc((100% - #{$main-content-max-width} - 2%) / 2);
   }
 
   #panel-wrapper {
@@ -1723,7 +1723,7 @@ $sidebar-display: "sidebar-display";
 
   footer {
     padding-left: 0;
-    padding-right: calc(100% - #{$sidebar-width-large} - 1180px);
+    // padding-right: calc(100% - #{$sidebar-width-large} - 1180px);
   }
 
   #back-to-top {
