@@ -5,6 +5,11 @@ order: 4
 ---
 
 <!-- @format -->
+<style>
+.custom > tr > td {
+    white-space: normal !important;
+}
+</style>
 
 # 👋🏻 안녕하세요!
 
@@ -61,7 +66,7 @@ order: 4
 
 ## 🌠 Skill
 
-<table>
+<table class="custom">
     <tr>
         <td>수준</td>
         <td>주니어</td>
