@@ -91,6 +91,7 @@ a {
 img {
   max-width: 100%;
   height: auto;
+  border-radius: 5%;
 }
 
 blockquote {
@@ -1117,7 +1118,7 @@ $sidebar-display: "sidebar-display";
 /* --- button back-to-top --- */
 
 #back-to-top {
-  $size: 2.7em;
+  $size: calc(clamp(1.7em, 1.7em + 1vw, 2.7em));
 
   display: none;
   z-index: 1;
@@ -1323,6 +1324,11 @@ $sidebar-display: "sidebar-display";
   [data-topbar-visible=false] #topbar-wrapper {
     top: 0;
   }
+}
+
+#back-to-top {
+  bottom: 5.5rem;
+  right: 1.2rem;
 }
 
 /* Phone & Pad */
