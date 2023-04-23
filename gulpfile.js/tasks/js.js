@@ -2,101 +2,107 @@
 
 "use strict";
 
-const { src, dest, watch, series, parallel} = require('gulp');
+const { src, dest, watch, series, parallel } = require("gulp");
 
-const concat = require('gulp-concat');
+const concat = require("gulp-concat");
 const rename = require("gulp-rename");
-const uglify = require('gulp-uglify');
-const insert = require('gulp-insert');
-const fs = require('fs');
+const uglify = require("gulp-uglify");
+const insert = require("gulp-insert");
+const fs = require("fs");
 
-const JS_SRC = '_javascript';
+const JS_SRC = "_javascript";
 const JS_DEST = `assets/js/dist`;
 
 function concatJs(files, output) {
   return src(files)
     .pipe(concat(output))
-    .pipe(rename({ extname: '.min.js' }))
+    .pipe(rename({ extname: ".min.js" }))
     .pipe(dest(JS_DEST));
 }
 
 function minifyJs() {
-  return src(`${ JS_DEST }/*.js`)
-    .pipe(insert.prepend(fs.readFileSync(`${ JS_SRC }/copyright`, 'utf8')))
-    .pipe(uglify({output: {comments: /^!|@preserve|@license|@cc_on/i}}))
+  return src(`${JS_DEST}/*.js`)
+    .pipe(insert.prepend(fs.readFileSync(`${JS_SRC}/copyright`, "utf8")))
+    .pipe(uglify({ output: { comments: /^!|@preserve|@license|@cc_on/i } }))
     .pipe(dest(JS_DEST));
 }
 
 const commonsJs = () => {
-  return concatJs(`${JS_SRC}/commons/*.js`, 'commons');
+  return concatJs(`${JS_SRC}/commons/*.js`, "commons");
 };
 
 const homeJs = () => {
-  return concatJs([
+  return concatJs(
+    [
       `${JS_SRC}/commons/*.js`,
-      `${JS_SRC}/utils/timeago.js`
+      `${JS_SRC}/utils/timeago.js`,
+      `${JS_SRC}/utils/img-extra.js`,
     ],
-    'home'
+    "home"
   );
 };
 
 const postJs = () => {
-  return concatJs([
+  return concatJs(
+    [
       `${JS_SRC}/commons/*.js`,
       `${JS_SRC}/utils/img-extra.js`,
       `${JS_SRC}/utils/timeago.js`,
       `${JS_SRC}/utils/checkbox.js`,
       `${JS_SRC}/utils/clipboard.js`,
       // 'smooth-scroll.js' must be called after ToC is ready
-      `${JS_SRC}/utils/smooth-scroll.js`
-    ], 'post'
+      `${JS_SRC}/utils/smooth-scroll.js`,
+    ],
+    "post"
   );
 };
 
 const categoriesJs = () => {
-  return concatJs([
-      `${JS_SRC}/commons/*.js`,
-      `${JS_SRC}/utils/category-collapse.js`
-    ], 'categories'
+  return concatJs(
+    [`${JS_SRC}/commons/*.js`, `${JS_SRC}/utils/category-collapse.js`],
+    "categories"
   );
 };
 
 const pageJs = () => {
-  return concatJs([
+  return concatJs(
+    [
       `${JS_SRC}/commons/*.js`,
       `${JS_SRC}/utils/checkbox.js`,
       `${JS_SRC}/utils/img-extra.js`,
       `${JS_SRC}/utils/clipboard.js`,
-      `${JS_SRC}/utils/smooth-scroll.js`
-    ], 'page'
+      `${JS_SRC}/utils/smooth-scroll.js`,
+    ],
+    "page"
   );
 };
 
 const miscJs = () => {
-  return concatJs([
-      `${JS_SRC}/commons/*.js`,
-      `${JS_SRC}/utils/locale-datetime.js`
-    ], 'misc'
+  return concatJs(
+    [`${JS_SRC}/commons/*.js`, `${JS_SRC}/utils/locale-datetime.js`],
+    "misc"
   );
 };
 
 // GA pageviews report
 const pvreportJs = () => {
-  return concatJs(`${JS_SRC}/utils/pageviews.js`, 'pvreport');
+  return concatJs(`${JS_SRC}/utils/pageviews.js`, "pvreport");
 };
 
 const buildJs = parallel(
-  commonsJs, homeJs, postJs, categoriesJs, pageJs, miscJs, pvreportJs);
+  commonsJs,
+  homeJs,
+  postJs,
+  categoriesJs,
+  pageJs,
+  miscJs,
+  pvreportJs
+);
 
 exports.build = series(buildJs, minifyJs);
 
 exports.liveRebuild = () => {
   buildJs();
 
-  watch([
-      `${ JS_SRC }/commons/*.js`,
-      `${ JS_SRC }/utils/*.js`
-    ],
-    buildJs
-  );
+  watch([`${JS_SRC}/commons/*.js`, `${JS_SRC}/utils/*.js`], buildJs);
 };
