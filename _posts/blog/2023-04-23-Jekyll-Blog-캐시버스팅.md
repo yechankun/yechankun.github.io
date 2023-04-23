@@ -60,6 +60,8 @@ Ruby와 Liquid 템플릿 언어가 적용된 Jekyll에서 활용 가능하다. (
 
 `_include/` 위치에 `build_versions.html`이란 파일을 만들어보자.
 
+{% raw %}
+
 ```
 <!--  build_versions.html -->
 {%- if site.github.build_revision and jekyll.environment == "production" -%}
@@ -70,8 +72,6 @@ Ruby와 Liquid 템플릿 언어가 적용된 Jekyll에서 활용 가능하다. (
 ```
 
 그리고 이를 다른 `header` 문구가 있는 html 파일에 다음과 같이 적용한다.
-
-{% raw %}
 
 ```liquid
 {% include build_versions.html %}
@@ -86,13 +86,9 @@ Ruby와 Liquid 템플릿 언어가 적용된 Jekyll에서 활용 가능하다. (
 <script src="{{ 'assets/js/bundle.js' | relative_url }}?v={{ build_version }}"></script>
 ```
 
-{% endraw %}
-
 ### Github Actions로 Jekyll 사이트를 빌드할 경우
 
 만약 깃허브 Actions로 빌드할 경우 기본적으로 Ubuntu 환경에서 빌드되며 jekyll의 환경에선 기본적으로 [site.time](https://jekyllrb.com/docs/variables/#site-variables)에 build된 시간이 저장된다.
-
-{% raw %}
 
 ```liquid
 <link
