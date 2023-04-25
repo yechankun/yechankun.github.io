@@ -1,10 +1,11 @@
 ---
 layout: post
 title: Git mirror, 원격저장소에 미러링 하는 법
-date: 2023-04-24 23:15
+date: 2023-04-24 23:15 +0900
 categories: 개발 Git
 tags: 깃 Git 도구 깃허브 미러링 깃랩 복사
 summary:
+image: /assets/img/develop/github.png
 ---
 
 ## 다른 깃저장소에 기존 저장소를 옮기고 싶을 때
