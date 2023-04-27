@@ -1,0 +1,1 @@
+bundle exec jekyll compose "%1" --collection "posts/%2"

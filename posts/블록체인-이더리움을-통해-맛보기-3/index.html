@@ -1,0 +1,306 @@
+<!DOCTYPE html><html lang="ko-KR" data-mode="dark" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /><meta name="prefer-datetime-locale" content="ko" /><meta name="generator" content="Jekyll v4.3.2" /><meta property="og:title" content="블록체인 [이더리움을 통해 맛보기] (3)" /><meta property="og:locale" content="ko_KR" /><meta name="description" content="솔리디티 (Solidity)" /><meta property="og:description" content="솔리디티 (Solidity)" /><link rel="canonical" href="https://yechankun.github.io/posts/%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8-%EC%9D%B4%EB%8D%94%EB%A6%AC%EC%9B%80%EC%9D%84-%ED%86%B5%ED%95%B4-%EB%A7%9B%EB%B3%B4%EA%B8%B0-3/" /><meta property="og:url" content="https://yechankun.github.io/posts/%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8-%EC%9D%B4%EB%8D%94%EB%A6%AC%EC%9B%80%EC%9D%84-%ED%86%B5%ED%95%B4-%EB%A7%9B%EB%B3%B4%EA%B8%B0-3/" /><meta property="og:site_name" content="니체의 개발 인생" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2022-02-25T01:28:00+09:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="블록체인 [이더리움을 통해 맛보기] (3)" /><meta name="twitter:site" content="@" /><meta name="google-site-verification" content="JvuBoR3bSTp-Eg0nEkFh2N02PxVYRvHz8omFXcFoePg" /> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-02-25T01:28:00+09:00","datePublished":"2022-02-25T01:28:00+09:00","description":"솔리디티 (Solidity)","headline":"블록체인 [이더리움을 통해 맛보기] (3)","mainEntityOfPage":{"@type":"WebPage","@id":"https://yechankun.github.io/posts/%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8-%EC%9D%B4%EB%8D%94%EB%A6%AC%EC%9B%80%EC%9D%84-%ED%86%B5%ED%95%B4-%EB%A7%9B%EB%B3%B4%EA%B8%B0-3/"},"url":"https://yechankun.github.io/posts/%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8-%EC%9D%B4%EB%8D%94%EB%A6%AC%EC%9B%80%EC%9D%84-%ED%86%B5%ED%95%B4-%EB%A7%9B%EB%B3%B4%EA%B8%B0-3/"}</script><title>블록체인 [이더리움을 통해 맛보기] (3) | 니체의 개발 인생</title><link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/assets/img/favicons/site.webmanifest"><link rel="shortcut icon" href="/assets/img/favicons/favicon.ico"><meta name="apple-mobile-web-app-title" content="니체의 개발 인생"><meta name="application-name" content="니체의 개발 인생"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="dns-prefetch" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin /><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="dns-prefetch" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://cdn.jsdelivr.net" /><link rel="dns-prefetch" href="https://cdn.jsdelivr.net" /><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap" /><link rel="preconnect" href="https://www.google-analytics.com" crossorigin="use-credentials" /><link rel="dns-prefetch" href="https://www.google-analytics.com" /><link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous" /><link rel="dns-prefetch" href="https://www.googletagmanager.com" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css" /><link rel="stylesheet" href="/assets/css/style.css?v=1682602155" /><link rel="stylesheet" type="text/css" href="/assets/css/linkpreview.css" media="screen" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.css" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1/dist/magnific-popup.min.css" /> <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script><body data-spy="scroll" data-target="#toc" data-topbar-visible="true"><div id="sidebar" onmouseenter="showSidebar()" onmouseleave="hideSidebar()" class="d-flex flex-column align-items-end"><div class="profile-wrapper text-center"><div id="avatar"> <a href="/" alt="avatar" class="mx-auto"> <img src=" /assets/img/yechankun_profile.png " alt="avatar" onerror="this.style.display='none'"> </a></div><div class="site-title mt-3"> <a href="/">니체의 개발 인생</a></div><div class="site-subtitle font-italic">예찬군</div></div><ul class="w-100"><li class="nav-item"> <a href="/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>홈</span> </a><li class="nav-item"> <a href="/categories/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>카테고리</span> </a><li class="nav-item"> <a href="/tags/" class="nav-link"> <i class="fa-fw fas fa-tag ml-xl-3 mr-xl-3 unloaded"></i> <span>태그</span> </a><li class="nav-item"> <a href="/archives/" class="nav-link"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>아카이브</span> </a><li class="nav-item"> <a href="/about/" class="nav-link"> <i class="fa-fw fas fa-info-circle ml-xl-3 mr-xl-3 unloaded"></i> <span>정보</span> </a></ul><div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center"> <a href="https://github.com/yechankun" aria-label="github" target="_blank" rel="noopener"> <i class="fab fa-github"></i> </a> <a href=" javascript:location.href = 'mailto:' + ['redniche','naver.com'].join('@')" aria-label="email" > <i class="fas fa-envelope"></i> </a> <a href="/feed.xml" aria-label="rss" > <i class="fas fa-rss"></i> </a></div></div><script> function showSidebar() { document.getElementById("sidebar").classList.add("expanded"); } function hideSidebar() { document.getElementById("sidebar").classList.remove("expanded"); } </script><div id="topbar-wrapper" class="row"><div id="topbar" class="col-11 d-flex h-100 align-items-center ml-3"> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i> <span id="breadcrumb"> <span> <a href="/"> 니체의 개발 인생 </a> </span> <span> <a href="/categories/%eb%b8%94%eb%a1%9d%ec%b2%b4%ec%9d%b8/">블록체인</a> </span> <span> <a href="/categories/%ec%a0%95%eb%b3%b4/">정보</a> </span> <span> <a href="/categories/%eb%a7%9b%eb%b3%b4%ea%b8%b0/">맛보기</a> </span> <span>블록체인 [이더리움을 통해 맛보기] (3)</span> </span><div class="search-elements-group d-flex align-items-center ml-auto"> <i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off" placeholder="검색..."> </span> <span id="search-cancel" >취소</span></div></div></div><div id="main-wrapper"><div id="main"><div class="row"><div id="core-wrapper" class="col-12 col-lg-11 col-xl-8"><div class="post pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><h1 data-toc-skip>블록체인 [이더리움을 통해 맛보기] (3)</h1><div class="post-meta text-muted"><div> By <em> <a href="https://github.com/yechankun">yechankun</a> </em></div><div class="d-flex"><div> <span> 게시 <em class="timeago" data-ts="1645720080" data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll" > 2022-02-25 </em> </span> <span class="readtime" data-toggle="tooltip" data-placement="bottom" title="3183 단어"> <em>17 분</em>읽는 시간</span></div></div></div><div class="post-content"><h1 id="솔리디티-solidity">솔리디티 (Solidity)</h1><p>지난 포스트에선 Remix IDE에서 솔리디티 예제 파일을 컴파일 하고 배포하는 것을 해 보았습니다.</p><p>오늘 할 것은 앞서 한 것들을 바탕으로 실제로 솔리디티를 배우고 소스를 코딩하는 것을 목표로 할 것입니다.</p><h2 id="솔리디티의-구조"><span class="mr-2">솔리디티의 구조</span><a href="#솔리디티의-구조" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><p><img data-src="/assets/img/develop/blockchain/etherium/infomation/3.png" alt="Untitled" data-proofer-ignore></p><p>지난 사용했었던 예제 .sol 파일을 라인별로 분석해 솔리디티의 기본 구조를 알아봅시다.</p><p>1 라인: 소스코드의 라이선스를 GPL-3.0으로 명시</p><p>3 라인: <em>Version Pragma</em>: 소스코드가 이용하는 컴파일러 버전 명시</p><ul><li>Sematic versioning을 따르고 있습니다. major.minor.patch<li>^(캐럿 연산자): ‘이상’ ← 이하 이상 할 때 그 이상입니다.</ul><p>9 라인: 컨트랙트의 범위를 나타내는 부분으로 중괄호로(28라인과 함께) 감싸져 있는 것을 보실 수 있습니다.</p><p>11라인: 상태 변수(<strong><em>State Variable</em></strong>)이 선언되어 있습니다.</p><h3 id="state-variable"><span class="mr-2">State Variable</span><a href="#state-variable" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3></h3><ul><li>블록체인(contract storage)에 값이 저장되는 변수<li>상태 변수의 접근 제어자(Visibility)를 external, public, priavte와 같이 지정 가능<li>기본형, 고조체, 배열 등 다양한 자료형이 존재</ul><p>17라인: 함수(<strong><em>Function</em></strong>)이 선언되어 있습니다.</p><h3 id="function"><span class="mr-2">Function</span><a href="#function" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3></h3><ul><li>컨트랙트 단위의 기능(해당 스마트컨트랙이 할 수 있는 기능)<li>매개 변수, 제어자, 반환값 지정 가능<li>함수 내부서 상태 변수의 값을 변경하거나 읽을 수 있음 (Read&amp;Write)</ul><h1 id="솔리디티-문법">솔리디티 문법</h1><h3 id="기본형-primitives-타입"><span class="mr-2">기본형 Primitives 타입</span><a href="#기본형-primitives-타입" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3></h3><ul><li>논리형 bool: true or false<li>정수형 uint: unsigned integer int: signed integer<li>8 ~ 256 bit를 표현할 수 있으며, uint는 uint256과 같습니다<li>주소형 address: 이더리움의 주소를 표현<li>바이트형 bytes# or byte[]: 데이터를 바이트로 표현할 수 있습니다</ul><h3 id="접근-제어자-visibility"><span class="mr-2">접근 제어자 Visibility</span><a href="#접근-제어자-visibility" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3></h3><div class="table-wrapper"><table><thead><tr><th> <th>private<th>internal<th>public<th>external<tbody><tr><td>설명<td>- 컨트랙트 내에서만 접근 가능<td>- 현재 컨트랙트와 자식 컨트랙트에서 접근 가능<td>- 현재 컨트랙트, 자식 컨트랙트, 외부 컨트랙트 및 주소에서 접근 가능<td>- 외부 컨트랙트와 주소에서 접근 가능 <br /> (내부 접근 불가)<tr><td>State Variables<td>O<td>X<td>O<td>O<tr><td>Functions<td>O<td>O<td>O<td>O</table></div><ul><li>public으로 되어 있으면 외부 컨트랙트에서 해당 상태 변수를 바로 조회할 수도 있습니다.</ul><h3 id="solidity-예제"><span class="mr-2">Solidity 예제</span><a href="#solidity-예제" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3></h3><pre><code class="language-solidity">// SPDX-License-Identifier: GPL-3.0
+pragma solidity &gt;=0.7.0 &lt;0.9.0;
+
+contract ParentTest {
+    // State variables 테스트
+    string private privateVar = "private variable test";
+    string internal internalVar = "internal variable test";
+    string public publicVar = "public variable test";
+
+    // Private function
+    function privateFunc() private pure returns (string memory) {
+        return "private test function called";
+    }
+
+    // Private fucntion을 테스트할 fucntion
+    function testPrivateFunc() public pure returns (string memory) {
+        return privateFunc();
+    }
+
+    // Internal function
+    function internalFunc() internal pure returns (string memory) {
+        return "internal test function called in Parent Contract";
+    }
+
+    // Internal fucntion을 테스트할 fucntion
+    function testInternalFunc() public pure virtual returns (string memory) {
+        return internalFunc();
+    }
+
+    // Public functions 테스트
+    function publicFunc() public pure returns (string memory) {
+        return "public test function called";
+    }
+
+    // External functions
+    function externalFunc() external pure returns (string memory) {
+        return "external test function called";
+    }
+}
+
+contract ChildTest is ParentTest {
+    // Internal function call be called inside child contracts.
+    function testInternalFunc() public pure override returns (string memory) {
+        return internalFunc();
+    }
+
+	function testInternalFuncInChild() public pure returns (string memory){
+        // return privateFunc(); //에러 발생
+        return internalFunc();
+    }
+}
+</code></pre><ul><li>타 언어와 다른 특징으로는 함수의 return타입을 뒤에 선언한다는 점<li>internal 함수는 자식에서 호출이 가능<li>public 함수는 자식 뿐만 아닌 외부에서도 모두 호출이 가능<li>이 예시를 컴파일 해서 배포(배포 방법은 이전 포스트 참고)한 후 각 함수를 호출해보면 private 와 public과 같은 Visibility를 잘 확인하실 수 있습니다.</ul><h2 id="자주-쓰는-자료형타입"><span class="mr-2">자주 쓰는 자료형(타입)</span><a href="#자주-쓰는-자료형타입" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><h3 id="배열-array"><span class="mr-2">배열 Array</span><a href="#배열-array" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3></h3><ul><li>고정 길이, 가변 길이 배열이 존재합니다<li>배열형 자료구조 제어 방법 index에 접근 push, pop, delete 사용<li>함수 내에서 로컬 변수로 배열을 사용하기 위해서는 고정 길이로 선언해야 합니다<li><p>인덱스는 0부터 시작합니다</p><h3 id="solidity-예제-1"><span class="mr-2">Solidity 예제</span><a href="#solidity-예제-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3></h3><pre><code class="language-solidity">// SPDX-License-Identifier: GPL-3.0
+pragma solidity &gt;=0.7.0 &lt;0.9.0;
+
+contract Array {
+    // 고정 길이 배열, 모든 원소는 0으로 초기화 됨
+    uint[10] public fixedSizeArr;
+
+    // 가변길이 배열
+    uint[] public arr; // 초기화 안 한 상태
+    uint[] public arr2 = [1, 2, 3]; // 같은 라인에서 초기화도 같이 한 상태
+
+    // 배열의 접근(조회) 방법
+    function get(uint i) public view returns (uint) {
+        return arr2[i];
+    }
+
+    // 새 원소를 배열에 추가
+    // 이 함수가 호출되고 나면 배열의 크기를 확인해 보자
+    function push(uint i) public {
+        arr.push(i);
+    }
+
+    // 배열에서 마지막 원소 삭제
+    // 이 함수가 호출되고 나면 배열의 크기를 확인해 보자
+    function pop() public {
+        arr.pop();
+    }
+
+    // delte 지시자를 사용하지만 실상은 특정 인덱스의 원소를 0으로 초기화시키는 동작을 함
+    // 이 함수가 호출되고 나면 배열의 크기를 확인해 보자
+    function remove(uint index) public {
+        delete arr[index];
+    }
+
+    // 배열의 크기를 반환하는 함수
+    function getLength() public view returns (uint) {
+        return arr.length;
+    }
+
+    // 전체 배열을 반환하는 함수
+    function getArr() public view returns (uint[] memory) {
+        return arr;
+    }
+
+    // 고정길이의 5칸짜리 배열을 생성하고 그것을 반환해주는 함수
+    function createArray() external pure returns (uint[] memory){
+        // create array in memory, only fixed size can be created
+        uint[] memory a = new uint[](5);
+        return a;
+    }
+}
+</code></pre></ul><h3 id="매핑-mapping-자주-쓰임"><span class="mr-2">매핑 Mapping (자주 쓰임)</span><a href="#매핑-mapping-자주-쓰임" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3></h3><p>예시를 통해 Mapping에 대해 다음을 배워봅시다.</p><ul><li>매핑형 선언<li>접근, 추가, 삭제<li>매핑에 저장된 key의 목록을 얻을 수 있는 방법을 제공하지 않습니다</ul><h3 id="solidity-예제-2"><span class="mr-2">Solidity 예제</span><a href="#solidity-예제-2" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3></h3><pre><code class="language-solidity">// SPDX-License-Identifier: UNLICENSED
+pragma solidity &gt;=0.7.0 &lt;0.9.0;
+
+contract Mapping {
+    // 매핑의 선언
+    // address(주소)를 uint로 매핑
+    mapping(address =&gt; uint) public addrToUint;
+
+    // 매핑 내의 키 값으로 값을 연결함
+    // 만약 해당하는 키가 없으면, 해당 타입의 기본 값을 반환함, 0.
+    function get(address _addr) public view returns (uint) {
+        return addrToUint[_addr];
+    }
+
+    // 매핑 내 address 키에 해당하는 unit 값을 업데이트
+    function set(address _addr, uint _i) public {
+        addrToUint[_addr] = _i;
+    }
+
+    // 매핑 내 address 키에 해당하는 unit 값을 기본 값으로 초기화, 0.
+    function reset(address _addr) public {
+        delete addrToUint[_addr];
+    }
+
+    // 이런식으로 매핑의 값을 uint 배열 때처럼 불러오는 것은 불가능하다(에러)
+    // 왜냐하면 매핑은 내부적으로 키를 저장해 놓는 것이 아니라 키 자체의 sha3해시에 의해 계산된
+    // 상태 메모리(state memory)에 저장된 값만 저장한다. 따라서 매핑의 조회는 원래 키가 제공되어야만 이를 계산하여
+    // 조회할 수 있게 구현되어 있기에 반드시 key가 있는 상태로 조회되어야 한다.
+    // function getMapping() public view returns (mapping memory){
+    //     return addrToUint;
+    // }
+}
+</code></pre><h3 id="사용자-선언-자료형---struct"><span class="mr-2">사용자 선언 자료형 - Struct</span><a href="#사용자-선언-자료형---struct" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3></h3><p>다음을 예시를 활용해 배워봅시다. Struct는 한글로 구조체라고도 합니다.</p><ul><li>여러 자료형을 하나의 관점으로 묶어서 관리하고자 할 때 선언합니다. (마치 C언어 같음)</ul><pre><code class="language-solidity">struct Todo{
+	string todoText;
+	bool isComplete;
+}
+</code></pre><ul><li>구조체의 Array, Mapping 의 값으로 지정이 가능합니다.<li>구조체 생성, 접근, 변경<li>함수 안에서 struct 상태 변수 참조 방법</ul><h3 id="solidity-예제-3"><span class="mr-2">Solidity 예제</span><a href="#solidity-예제-3" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3></h3><pre><code class="language-solidity">// SPDX-License-Identifier: UNLICENSED
+pragma solidity &gt;=0.7.0 &lt;0.9.0;
+
+contract Struct {
+
+    //구조체의 선언
+    struct Todo {
+        string text;
+        bool boolean;
+    }
+
+    // 구조체의 배열 선언
+    Todo[] public structTodoArray;
+
+    // 주소를 Todo 타입으로 매핑한다.
+    mapping(address =&gt; Todo) public addrToStruct;
+
+    // 새로운 구조체를 생성해서 구조체 배열에 푸시
+    // 접근방식 1
+    function create1(string memory _text) public {
+        structTodoArray.push(Todo(_text, false));
+    }
+
+    // 접근방식 2
+    function create2(string memory _text) public {
+        structTodoArray.push(Todo({text: _text, boolean: false}));
+    }
+
+    // 접근방식 3
+    function create3(string memory _text) public {
+        Todo memory s;
+        s.text = _text;
+        structTodoArray.push(s);
+    }
+
+    // 구조체 배열 내 특정 인덱스의 Todo 인스턴스의 text를 변경
+    function updateText(uint _index, string memory _text) public {
+        Todo storage s = structTodoArray[_index];
+        s.text = _text;
+    }
+
+    // 불리언(Boolean) 값을 토글
+    function updateBoolean(uint _index) public {
+        Todo storage s = structTodoArray[_index];
+        bool current = s.boolean;
+        s.boolean = !current;
+    }
+}
+</code></pre><h2 id="함수-function"><span class="mr-2">함수 function</span><a href="#함수-function" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><p>예제를 통해 다음을 배워봅시다.</p><ul><li>함수 선언 방법<li>매개변수 유무, 반환 값 유무<li>view, pure 함수의 특징<li>2개 이상의 값을 반환하도록 선언</ul><pre><code class="language-solidity">
+// SPDX-License-Identifier: UNLICENSED
+pragma solidity &gt;=0.7.0 &lt;0.9.0;
+
+contract Function {
+
+    //여러 상태변수들 선언
+    uint public num = 1;
+
+    uint public a = 1;
+    string public s = "hello solidity";
+    bool public b = true;
+
+    // 파라미터와 리턴값이 없는 함수
+    function addOne() public {
+        num++;
+    }
+
+    // 하나의 파라미터와 리턴값이 있는 함수
+    function addNumber(uint x) public returns (uint) {
+        num += x;
+
+        return num;
+    }
+
+    // view - 상태변수들을 변경하지 않는다, 단순히 읽음. 가스가 안듬.
+    function addAndReturn(uint x) public view returns (uint) {
+       return num + x;
+    }
+
+    // pure - 상태 변수를 읽거나 수정하지 않음. 가스가 안듬.
+    function add(uint x, uint y) public pure returns (uint) {
+       return x + y;
+    }
+
+    // 여러 값들을 리턴하는 방법.
+    function returnMany() public view returns (uint, string memory, bool) {
+        return (a, s, b);
+    }
+
+}
+</code></pre><h2 id="data-location"><span class="mr-2">Data location</span><a href="#data-location" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><ul><li>배열이나 구조체처럼 복합타입(Complex type)의 경우 데이터의 위치(Data location)에 대한 어노테이션(Annotation)이 추가됩니다.<li><p>메모리(memory)와 저장소(storage), 콜데이터(calldata)로 구분되는 데이터의 위치는 각 타입별로 기본값이 있으나 필요에 따라서 재지정이 가능합니다.</p><ul><li>메모리(memory) : 함수 내에서 임시로 데이터(storage 등)를 저장 할 때 사용하는 변수이다. 임시 데이터(temporary data)<li>저장소(storage) : 블록체인 상에 영구이 저장된다. 영구데이터(permanent data) 영역에 데이터가 저장되므로 다른 키워드에 비해 큰 비용을 초래한다.<li>콜데이터(calldata) : 리턴 파라미터를 제외한 외부 함수의 파라미터들, 데이터를 호출하고 메모리와 비슷하게 동작 → 함수에 전달되는 매개 변수처럼 변경 불가능하고 임시적인 데이터 저장 영역임.</ul><h3 id="solidity-예제-4"><span class="mr-2">Solidity 예제</span><a href="#solidity-예제-4" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3></h3><pre><code class="language-solidity">// SPDX-License-Identifier: UNLICENSED
+pragma solidity &gt;=0.7.0 &lt;0.9.0;
+
+contract HamburgerFactory {
+    struct Hamburger {
+	    string name;
+	    string status;
+	}
+
+	Hamburger[] Hamburgers;
+
+    //햄버거를 초기화하고 배열에 햄버거를 넣음
+    function createHamburger(string memory _text) public {
+        Hamburgers.push(Hamburger({name: _text, status: "not eat"}));
+    }
+
+	function eatStorageHamburger(uint _index) public {
+        // storage로 선언된 myHamburger로 햄버거의 인덱스를 참조전달함
+	    Hamburger storage myHamburger = Hamburgers[_index];
+        myHamburger.status = "eaten"; //따라서 수행되고 나면 값이 바뀜
+	}
+
+	function eatMemoryHamburger(uint _index) public view{
+        // 메모리 변수의 선언
+	    Hamburger memory myHamburger = Hamburgers[_index];
+	    myHamburger.status = "eaten"; //상태가 변해도 블록체인에는 영향X.
+	}
+
+    function getStatusHamburger(uint _index) public view returns(string memory){
+        return Hamburgers[_index].status; //해당 값이 memory 형태에 담겨서 return됨
+    }
+}
+</code></pre></ul><h2 id="제어문"><span class="mr-2">제어문</span><a href="#제어문" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><p>제어문은 타 언어와 매우 유사하므로 예시를 위주로 설명하겠습니다.</p><h3 id="조건문-if-else"><span class="mr-2">조건문 If-Else</span><a href="#조건문-if-else" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3></h3><pre><code class="language-solidity">//함수 내에서만 사용 가능함.
+if(x &lt; 10){
+	return 0;
+} else if (x &lt; 20){
+	return 1;
+} else {
+	return 2;
+}
+
+// 삼항 연산자
+	return _x &lt; 10 ? 1 : 2;
+</code></pre><h3 id="반복문-for--while"><span class="mr-2">반복문 for / while</span><a href="#반복문-for--while" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3></h3><pre><code class="language-solidity">//함수 내에서만 사용 가능함.
+for (uint i = 0; i &lt; 10; i++) {
+	if (i == 3) {
+		continue;
+	}
+	if (i == 5) {
+		break;
+	}
+}
+
+uint i;
+//함수 내에서만 사용 가능함.
+while (i &lt; 10){
+	i++;
+}
+</code></pre><ul><li>반복문 사용시 주의사항: 이더리움은 튜링 완전머신으로 반복문을 제대로 지원하지만 함수를 수행할 때 수행 시간에 따라 가스가 발생하기 때문에 로직을 비효율적으로 하면 많은 돈이 소모될 수 있습니다.</ul><h2 id="화폐-단위"><span class="mr-2">화폐 단위</span><a href="#화폐-단위" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><ul><li>화폐 단위에는 ether와 wei, gwei가 있습니다.<li>이더리움 내에선 소수점을 허용하지 않기 때문에 이와 같은 방식을 사용합니다.</ul><pre><code class="language-solidity">// SPDX-License-Identifier: UNLICENSED
+pragma solidity &gt;=0.7.0 &lt;0.9.0;
+
+contract EtherUnits {
+    uint public oneWei = 1 wei;
+    uint public oneGwei = 1 gwei;
+    uint public oneEther = 1 ether;
+
+    // 1 wei is equal to 1
+    bool public isOneWei = 1 wei == 1;
+
+    // 1 ether is equal to 10^18 wei
+    bool public isOneEther1 = oneEther == 1e18;
+
+    // 1 ether is equals to 10^9 gwei.
+    bool public isOneEther2 = oneEther == 10**9 * oneGwei;
+
+    // 1 gwei is equals to 10^9 wei.
+    bool public isOneGwei = oneGwei == 10**9 * oneWei;
+}
+</code></pre></div><div class="post-tail-wrapper text-muted"><div class="post-meta mb-3"> <i class="far fa-folder-open fa-fw mr-1"></i> <a href="/categories/%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8/" >블록체인</a >> <a href="/categories/%EC%A0%95%EB%B3%B4/" >정보</a >> <a href="/categories/%EB%A7%9B%EB%B3%B4%EA%B8%B0/" >맛보기</a ></div><div class="post-tags"> <i class="fa fa-tags fa-fw mr-1"></i> <a href="/tags/%EB%8B%88%EC%B2%B4/" class="post-tag no-text-decoration" >니체</a> <a href="/tags/%EC%98%88%EC%B0%AC%EA%B5%B0/" class="post-tag no-text-decoration" >예찬군</a> <a href="/tags/%EA%B0%9C%EB%B0%9C/" class="post-tag no-text-decoration" >개발</a> <a href="/tags/%EC%9D%B4%EB%8D%94%EB%A6%AC%EC%9B%80/" class="post-tag no-text-decoration" >이더리움</a> <a href="/tags/%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8/" class="post-tag no-text-decoration" >블록체인</a> <a href="/tags/%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98/" class="post-tag no-text-decoration" >트랜잭션</a> <a href="/tags/remix/" class="post-tag no-text-decoration" >Remix</a> <a href="/tags/ide/" class="post-tag no-text-decoration" >IDE</a></div><div class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2" ><div class="license-wrapper"> 이 기사는 저작권자의 <a href="https://creativecommons.org/licenses/by/4.0/"> CC BY 4.0 </a> 라이센스를 따릅니다.</div><div class="share-wrapper"> <span class="share-label text-muted mr-1">공유하기</span> <span class="share-icons"> <a href="https://twitter.com/intent/tweet?text=블록체인 [이더리움을 통해 맛보기] (3) - 니체의 개발 인생&amp;url=https://yechankun.github.io/posts/%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8-%EC%9D%B4%EB%8D%94%EB%A6%AC%EC%9B%80%EC%9D%84-%ED%86%B5%ED%95%B4-%EB%A7%9B%EB%B3%B4%EA%B8%B0-3/" data-toggle="tooltip" data-placement="top" title="Twitter" target="_blank" rel="noopener" aria-label="Twitter"> <i class="fa-fw fab fa-twitter"></i> </a> <a href="https://www.facebook.com/sharer/sharer.php?title=블록체인 [이더리움을 통해 맛보기] (3) - 니체의 개발 인생&amp;u=https://yechankun.github.io/posts/%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8-%EC%9D%B4%EB%8D%94%EB%A6%AC%EC%9B%80%EC%9D%84-%ED%86%B5%ED%95%B4-%EB%A7%9B%EB%B3%B4%EA%B8%B0-3/" data-toggle="tooltip" data-placement="top" title="Facebook" target="_blank" rel="noopener" aria-label="Facebook"> <i class="fa-fw fab fa-facebook-square"></i> </a> <a href="https://t.me/share/url?url=https://yechankun.github.io/posts/%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8-%EC%9D%B4%EB%8D%94%EB%A6%AC%EC%9B%80%EC%9D%84-%ED%86%B5%ED%95%B4-%EB%A7%9B%EB%B3%B4%EA%B8%B0-3/&amp;text=블록체인 [이더리움을 통해 맛보기] (3) - 니체의 개발 인생" data-toggle="tooltip" data-placement="top" title="Telegram" target="_blank" rel="noopener" aria-label="Telegram"> <i class="fa-fw fab fa-telegram"></i> </a> <i id="copy-link" class="fa-fw fas fa-link small" data-toggle="tooltip" data-placement="top" title="링크 복사하기" data-title-succeed="링크가 복사되었습니다!"> </i> </span></div></div></div></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted"><div class="access"><div id="access-lastmod" class="post"><div class="panel-heading">최근 업데이트</div><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li><a href="/posts/Git-%EC%86%8C%EA%B0%9C-%EB%B0%8F-%EA%B8%B0%EB%B3%B8-%EB%AA%85%EB%A0%B9%EC%96%B4/">Git 소개 및 기본 명령어</a><li><a href="/posts/Git-mirror-%EB%B0%A9%EB%B2%95/">Git mirror, 원격저장소에 미러링 하는 법</a><li><a href="/posts/%EB%B0%B1%EC%A4%80-%EC%A4%84-%EC%84%B8%EC%9A%B0%EA%B8%B0/">백준 줄 세우기 파이썬(Python) 풀이</a><li><a href="/posts/Jekyll-Blog-%EC%BA%90%EC%8B%9C%EB%B2%84%EC%8A%A4%ED%8C%85/">Jekyll, Html 캐시 비활성화 방법 cache-busting</a><li><a href="/posts/%EB%B0%B1%EC%A4%80-%EB%9E%9C%EC%84%A0-%EC%9E%90%EB%A5%B4%EA%B8%B0-%ED%92%80%EC%9D%B4,-%ED%8C%8C%EC%9D%B4%EC%8D%AC/">백준 랜선 자르기 풀이, 파이썬</a></ul></div><div id="access-tags"><div class="panel-heading">인기 태그</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/%EB%8B%88%EC%B2%B4/">니체</a> <a class="post-tag" href="/tags/%EC%98%88%EC%B0%AC%EA%B5%B0/">예찬군</a> <a class="post-tag" href="/tags/%EA%B0%9C%EB%B0%9C/">개발</a> <a class="post-tag" href="/tags/%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8/">블록체인</a> <a class="post-tag" href="/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</a> <a class="post-tag" href="/tags/%EC%9D%B4%EB%8D%94%EB%A6%AC%EC%9B%80/">이더리움</a> <a class="post-tag" href="/tags/%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98/">트랜잭션</a> <a class="post-tag" href="/tags/git/">Git</a> <a class="post-tag" href="/tags/ide/">IDE</a> <a class="post-tag" href="/tags/remix/">Remix</a></div></div></div><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script><div id="toc-wrapper" class="pl-0 pr-4 mb-5"><div class="panel-heading pl-3 pt-2 mb-2">바로가기</div><nav id="toc" data-toggle="toc"></nav></div></div></div><div class="row"><div class="col-12 col-lg-11 col-xl-8"><div id="tail-wrapper" class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><div id="related-posts" class="mt-5 mb-2 mb-sm-4"><h3 class="pt-2 mt-1 mb-4 ml-1" data-toc-skip>관련된 글</h3><div class="card-deck mb-4"><div class="card"> <a href="/posts/%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8-%EC%9D%B4%EB%8D%94%EB%A6%AC%EC%9B%80%EC%9D%84-%ED%86%B5%ED%95%B4-%EB%A7%9B%EB%B3%B4%EA%B8%B0-4/"><div class="card-body"> <em class="timeago small" data-ts="1645958040" > 2022-02-27 </em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>블록체인 [이더리움을 통해 맛보기] (4)</h3><div class="text-muted small"><p> 좀 더 어려운 스마트 컨트랙 직접 만들어보기 (feat. Chainlink) 지난 포스트에서 스마트 컨트랙을 Solidity로 작성하는 방법을 배웠습니다. 그렇다면 이번엔 좀 더 구체적인 기능들이 있는 스마트 컨트랙을 작성하는 것을 해보도록 하겠습니다. 우선 앞으로 이 포스트 및 이외의 여러 스마트컨트랙 작성을 위해 꼭 필요한 배경지식을 잠깐 설명...</p></div></div></a></div><div class="card"> <a href="/posts/%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8-%EC%9D%B4%EB%8D%94%EB%A6%AC%EC%9B%80%EC%9D%84-%ED%86%B5%ED%95%B4-%EB%A7%9B%EB%B3%B4%EA%B8%B0-2/"><div class="card-body"> <em class="timeago small" data-ts="1645543667" > 2022-02-23 </em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>블록체인 [이더리움을 통해 맛보기] (2)</h3><div class="text-muted small"><p> 스마트 컨트랙(Smart Contract)이란? 1990년대에 Nick Szabo가 소개한 개념으로 기존의 문서 계약을 디지털 형식으로 바꾼 것입니다. 디지털 형식으로 명시된 서약(commitment)들의 집합이라고 할 수 있음! 전혀 스마트하지 않아서 다소 잘못된 용어지만 자리잡음 블록체인에서의 정의 불변의 컴퓨터 프로그램 컴퓨터 프...</p></div></div></a></div><div class="card"> <a href="/posts/%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8-%EC%9D%B4%EB%8D%94%EB%A6%AC%EC%9B%80%EC%9D%84-%ED%86%B5%ED%95%B4-%EB%A7%9B%EB%B3%B4%EA%B8%B0-1/"><div class="card-body"> <em class="timeago small" data-ts="1645461094" > 2022-02-22 </em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>블록체인 [이더리움을 통해 맛보기] (1)</h3><div class="text-muted small"><p> 1. 이더리움, 트랜잭션 우리의 목적은 빠르게 이더리움을 이해하고 실사용을 해보는 것입니다. 이더리움은 온라인상에서 인터넷으로 이어진 노드들로(여러 컴퓨터) 유지되고 있는 분산 데이터베이스의 일종이라 생각하면 되는데 이더리움 메인넷에서 접속되는 클라이언트 종류들의 통계는 다음과 같습니다. 여기서 클라이언트란? 네트...</p></div></div></a></div></div></div><div class="post-navigation d-flex justify-content-between"> <a href="/posts/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-level2-%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%94%84%EB%A0%8C%EC%A6%88-%EC%BB%AC%EB%9F%AC%EB%A7%81%EB%B6%81/" class="btn btn-outline-primary" prompt="이전 글"><p>프로그래머스 Level2 카카오프렌즈 컬러링북 풀이</p></a> <a href="/posts/%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8-%EC%9D%B4%EB%8D%94%EB%A6%AC%EC%9B%80%EC%9D%84-%ED%86%B5%ED%95%B4-%EB%A7%9B%EB%B3%B4%EA%B8%B0-4/" class="btn btn-outline-primary" prompt="다음 글"><p>블록체인 [이더리움을 통해 맛보기] (4)</p></a></div><script type="text/javascript"> $(function () { const origin = "https://giscus.app"; const iframe = "iframe.giscus-frame"; const lightTheme = "light"; const darkTheme = "dark_dimmed"; let initTheme = lightTheme; if ($("html[data-mode=dark]").length > 0 || ($("html[data-mode]").length == 0 && window.matchMedia("(prefers-color-scheme: dark)").matches)) { initTheme = darkTheme; } let giscusAttributes = { "src": "https://giscus.app/client.js", "data-repo": "yechankun/yechankun.github.io", "data-repo-id": "R_kgDOG4IGyA", "data-category": "Announcements", "data-category-id": "DIC_kwDOG4IGyM4CV-fd", "data-mapping": "pathname", "data-reactions-enabled": "1", "data-emit-metadata": "0", "data-theme": initTheme, "data-input-position": "top", "data-lang": "ko", "crossorigin": "anonymous", "async": "" }; let giscusScript = document.createElement("script"); Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value)); document.getElementById("tail-wrapper").appendChild(giscusScript); addEventListener("message", (event) => { if (event.source === window && event.data && event.data.direction === ModeToggle.ID) { /* global theme mode changed */ const mode = event.data.message; const theme = (mode === ModeToggle.DARK_MODE ? darkTheme : lightTheme); const message = { setConfig: { theme: theme } }; const giscus = document.querySelector(iframe).contentWindow; giscus.postMessage({ giscus: message }, origin); } }); }); </script></div></div></div><footer class="d-flex w-100 justify-content-center"><div class="d-flex justify-content-between align-items-center text-muted"><div class="footer-left"><p class="mb-0"> © 2023 <a href="https://github.com/yechankun">yechankun</a>. <span data-toggle="tooltip" data-placement="top" title="명시되지 않는 한 이 사이트의 블로그 게시물은 작성자의 Creative Commons Attribution 4.0 International(CC BY 4.0) 라이선스에 따라 사용이 허가되었습니다.">일부 권리 보유</span></p></div><div class="footer-right"><p class="mb-0"> Powered by <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> with <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme.</p></div></div></footer></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content"><div id="search-hints"><div id="access-tags"><div class="panel-heading">인기 태그</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/%EB%8B%88%EC%B2%B4/">니체</a> <a class="post-tag" href="/tags/%EC%98%88%EC%B0%AC%EA%B5%B0/">예찬군</a> <a class="post-tag" href="/tags/%EA%B0%9C%EB%B0%9C/">개발</a> <a class="post-tag" href="/tags/%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8/">블록체인</a> <a class="post-tag" href="/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</a> <a class="post-tag" href="/tags/%EC%9D%B4%EB%8D%94%EB%A6%AC%EC%9B%80/">이더리움</a> <a class="post-tag" href="/tags/%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98/">트랜잭션</a> <a class="post-tag" href="/tags/git/">Git</a> <a class="post-tag" href="/tags/ide/">IDE</a> <a class="post-tag" href="/tags/remix/">Remix</a></div></div></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a> <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5">검색 결과가 없습니다.</p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script> <script src="https://cdn.jsdelivr.net/combine/npm/magnific-popup@1/dist/jquery.magnific-popup.min.js,npm/lozad/dist/lozad.min.js,npm/clipboard@2/dist/clipboard.min.js"></script> <script src="https://cdn.jsdelivr.net/combine/npm/dayjs@1/dayjs.min.js,npm/dayjs@1/locale/ko.min.js,npm/dayjs@1/plugin/relativeTime.min.js,npm/dayjs@1/plugin/localizedFormat.min.js"></script> <script defer src="/assets/js/dist/post.min.js?v=1682602155"></script> <script src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.bundle.min.js"></script> <script defer src="/app.js"></script> <script defer src="https://www.googletagmanager.com/gtag/js?id=G-Z52C839EYH"></script> <script> document.addEventListener("DOMContentLoaded", function(event) { window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-Z52C839EYH'); }); </script>
