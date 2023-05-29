@@ -1,5 +1,9 @@
 ---
+<<<<<<< HEAD
 title: About
+=======
+# the default layout is 'page'
+>>>>>>> fork/main
 icon: fas fa-info-circle
 order: 4
 ---
