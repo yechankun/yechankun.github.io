@@ -88,7 +88,7 @@ img_cdn:
 # the avatar on sidebar, support local or CORS resources
 avatar: assets/img/yechankun_profile.png
 
-# boolean type, the global switch for ToC in posts.
+# boolean type, the global switch for TOC in posts.
 toc: true
 
 comments:
@@ -190,7 +190,7 @@ exclude:
   - tools
   - README.md
   - LICENSE
-  - gulpfile.js
+  - rollup.config.js
   - node_modules
   - package*.json
 
