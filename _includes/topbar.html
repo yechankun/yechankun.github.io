@@ -1,8 +1,10 @@
 <!-- The Top Bar -->
 
-<div id="topbar-wrapper" class="row">
-  <div id="topbar" class="col-11 d-flex h-100 align-items-center ml-3">
-    <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i>
+<div id="topbar-wrapper">
+  <div
+    id="topbar"
+    class="container d-flex align-items-center justify-content-between h-100"
+  >
     <span id="breadcrumb">
       {% assign paths = page.url | split: '/' %} {% if paths.size == 0 or
       page.layout == 'home' %}

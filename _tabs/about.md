@@ -485,9 +485,7 @@ order: 4
 <div class="jekyll-linkpreview-custom">    
     <div class="jekyll-linkpreview-content">
         <div class="jekyll-linkpreview-custom-image">
-        <a href="https://www.linkedin.com/school/%EA%B2%BD%EC%83%81%EB%8C%80%ED%95%99%EA%B5%90/?trk=public_profile_school_profile-section-card_full-click" target="_blank" class="img-link">
             <img src="https://media-exp1.licdn.com/dms/image/C560BAQEx9S-uPO8-Xw/company-logo_200_200/0/1519874441028?e=2147483647&v=beta&t=a5cznqUayv3uabQQmywmMws34bZQTa6SF_KR6JrNw8s">
-        </a>
         </div>
         <div class="jekyll-linkpreview-custom-body">
             <h2 class="jekyll-linkpreview-title">
