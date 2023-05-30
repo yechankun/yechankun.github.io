@@ -1,64 +1,72 @@
-<!--
-  The Top Bar
--->
+<!-- The Top Bar -->
 
 <div id="topbar-wrapper" class="row">
   <div id="topbar" class="col-11 d-flex h-100 align-items-center ml-3">
     <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i>
     <span id="breadcrumb">
-    {% assign paths = page.url | split: '/' %}
-
-    {% if paths.size == 0 or page.layout == 'home' %}
+      {% assign paths = page.url | split: '/' %} {% if paths.size == 0 or
+      page.layout == 'home' %}
       <!-- index page -->
-      <span>{{ site.data.locales[lang].title | default: site.title | capitalize }}</span>
+      <span>{{ site.data.locales[include.lang].tabs.home | capitalize }}</span>
 
-    {% else %}
-
-      {% for item in paths %}
-
-        {% if forloop.first %}
-          <span>
-            <a href="{{ '/' | relative_url }}">
-              {{ site.data.locales[lang].title | default: site.title  | capitalize }}
-            </a>
-          </span>
-
-        {% elsif forloop.last %}
-          {% if page.collection == 'tabs' %}
-            <span>{{ site.data.locales[lang].tabs[item] | default: page.title }}</span>
-          {% else %}
-          {% assign categories = page.categories %}
-          {% for category in categories %}
-            <span>
-              <a href="{{ site.baseurl }}/categories/{{ category | cgi_escape | downcase }}/">{{ category }}</a>
-            </span>
-          {% endfor %}
-            <span>{{ page.title }}</span>
-          {% endif %}
-        
-        {% elsif page.layout == 'category' or page.layout == 'tag' %}
-          <span>
-            <a href="{{ item | relative_url }}">
-              {{ site.data.locales[lang].tabs[item] | default: page.title }}
-            </a>
-          </span>
-        {% endif %}
-
-      {% endfor %}
-
-    {% endif %}
-
-    </span><!-- endof #breadcrumb -->
-
-    <div class="search-elements-group d-flex align-items-center ml-auto">
-      <i id="search-trigger" class="fas fa-search fa-fw"></i>
-      <span id="search-wrapper" class="align-items-center">
-        <i class="fas fa-search fa-fw"></i>
-        <input class="form-control" id="search-input" type="search"
-          aria-label="search" autocomplete="off" placeholder="{{ site.data.locales[lang].search.hint | capitalize }}...">
+      {% else %} {% for item in paths %} {% if forloop.first %}
+      <span>
+        <a href="{{ '/' | relative_url }}">
+          {{ site.data.locales[include.lang].tabs.home | capitalize }}
+        </a>
       </span>
-      <span id="search-cancel" >{{ site.data.locales[lang].search.cancel }}</span>
-    </div>
-  </div>
 
+      {% elsif forloop.last %} {% if page.collection == 'tabs' %}
+      <span
+        >{{ site.data.locales[include.lang].tabs[item] | default: page.title
+        }}</span
+      >
+      {% else %} {% assign categories = page.categories %} {% for category in
+      categories %}
+      <span>
+        <a
+          href="{{ site.baseurl }}/categories/{{ category | cgi_escape | downcase }}/"
+          >{{ category }}</a
+        >
+      </span>
+      {% endfor %}
+      <span>{{ page.title }}</span>
+      {% endif %} {% elsif page.layout == 'category' or page.layout == 'tag' %}
+      <span>
+        <a href="{{ item | relative_url }}">
+          {{ site.data.locales[include.lang].tabs[item] | default: page.title }}
+        </a>
+      </span>
+      {% endif %} {% endfor %} {% endif %}
+    </span>
+    <!-- endof #breadcrumb -->
+
+    <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i>
+
+    <div id="topbar-title">
+      {% if page.layout == 'home' %} {{- site.data.locales[include.lang].title |
+      default: site.title -}} {% elsif page.collection == 'tabs' or page.layout
+      == 'page' %} {%- capture tab_key -%}{{ page.url | split: '/' }}{%-
+      endcapture -%} {{- site.data.locales[include.lang].tabs[tab_key] |
+      default: page.title -}} {% else %} {{-
+      site.data.locales[include.lang].layout[page.layout] | default: page.layout
+      | capitalize -}} {% endif %}
+    </div>
+
+    <i id="search-trigger" class="fas fa-search fa-fw"></i>
+    <span id="search-wrapper" class="align-items-center">
+      <i class="fas fa-search fa-fw"></i>
+      <input
+        class="form-control"
+        id="search-input"
+        type="search"
+        aria-label="search"
+        autocomplete="off"
+        placeholder="{{ site.data.locales[include.lang].search.hint | capitalize }}..."
+      />
+    </span>
+    <span id="search-cancel"
+      >{{ site.data.locales[include.lang].search.cancel }}</span
+    >
+  </div>
 </div>
