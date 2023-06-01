@@ -421,7 +421,7 @@ order: 4
         <ul class="list">
             <li class="item">Jenkins 사용경험이 있습니다.</li>
         </ul>
-    </di>
+    </div>
 </section>
 
 ### ETC
@@ -449,7 +449,7 @@ order: 4
 
 ## 🏛 Education
 
-<div>    
+<section class="section">
     <div>
         <img src="https://media-exp1.licdn.com/dms/image/C560BAQEx9S-uPO8-Xw/company-logo_200_200/0/1519874441028?e=2147483647&v=beta&t=a5cznqUayv3uabQQmywmMws34bZQTa6SF_KR6JrNw8s">
     </div>
@@ -460,8 +460,7 @@ order: 4
         <div>학사 졸업 · 컴퓨터과학과 </div>
         <div>2015년 ~ 2021년</div>
     </div>
-
-</div>
+</section>
 
 ## 🤝 Outside activities
 
