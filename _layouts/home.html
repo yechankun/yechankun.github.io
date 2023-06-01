@@ -28,10 +28,12 @@ endfor %} {% endif %}
   {% for post in posts %}
   <a href="{{ post.url | relative_url }}" class="card-wrapper">
     <div class="card post-preview flex-md-row-reverse">
-      {% if post.image %} {% if post.image.lqip %} {% capture lqip %}lqip="{{
-      post.image.lqip }}"{% endcapture %} {% endif %} {% assign src =
-      post.image.path | default: post.image %} {% unless src contains '//' %} {%
-      assign src = post.img_path | append: '/' | append: src | replace: '//',
+      {% if post.image %} {% if post.image.lqip %} {% capture lqip %}
+      lqip="{{post.image.lqip }}" {% endcapture %} {% endif %} {% assign src =
+      post.image.path | default: post.image %} {% assign start_char = src |
+      slice: 0 %} {% if start_char != '/' %} {% assign src = post.url |
+      relative_url | append: src %} {% endif %} {% unless src contains '//' %}
+      {% assign src = post.img_path | append: '/' | append: src | replace: '//',
       '/' %} {% endunless %} {% assign alt = post.image.alt | default: 'Preview
       Image' %}
 
