@@ -1,21 +1,29 @@
 <!-- Switch the mode between dark and light. -->
 
 <script type="text/javascript">
+  const html = document.documentElement;
+  const modeStorage =
+    (html.hasAttribute("storage-mode") &&
+      (html.getAttribute("storage-mode") === "local"
+        ? localStorage
+        : sessionStorage)) ||
+    sessionStorage;
+
   class ModeToggle {
     static get MODE_KEY() {
-      return 'mode';
+      return "mode";
     }
     static get MODE_ATTR() {
-      return 'data-mode';
+      return "data-mode";
     }
     static get DARK_MODE() {
-      return 'dark';
+      return "dark";
     }
     static get LIGHT_MODE() {
-      return 'light';
+      return "light";
     }
     static get ID() {
-      return 'mode-toggle';
+      return "mode-toggle";
     }
 
     constructor() {
@@ -34,7 +42,7 @@
       let self = this;
 
       /* always follow the system prefers */
-      this.sysDarkPrefers.addEventListener('change', () => {
+      this.sysDarkPrefers.addEventListener("change", () => {
         if (self.hasMode) {
           if (self.isDarkMode) {
             if (!self.isSysDarkPrefer) {
@@ -54,7 +62,7 @@
     } /* constructor() */
 
     get sysDarkPrefers() {
-      return window.matchMedia('(prefers-color-scheme: dark)');
+      return window.matchMedia("(prefers-color-scheme: dark)");
     }
 
     get isSysDarkPrefer() {
@@ -74,7 +82,7 @@
     }
 
     get mode() {
-      return sessionStorage.getItem(ModeToggle.MODE_KEY);
+      return modeStorage.getItem(ModeToggle.MODE_KEY);
     }
 
     /* get the current mode on screen */
@@ -87,18 +95,24 @@
     }
 
     setDark() {
-      document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.DARK_MODE);
-      sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE);
+      document.documentElement.setAttribute(
+        ModeToggle.MODE_ATTR,
+        ModeToggle.DARK_MODE
+      );
+      modeStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE);
     }
 
     setLight() {
-      document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.LIGHT_MODE);
-      sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE);
+      document.documentElement.setAttribute(
+        ModeToggle.MODE_ATTR,
+        ModeToggle.LIGHT_MODE
+      );
+      modeStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE);
     }
 
     clearMode() {
       document.documentElement.removeAttribute(ModeToggle.MODE_ATTR);
-      sessionStorage.removeItem(ModeToggle.MODE_KEY);
+      modeStorage.removeItem(ModeToggle.MODE_KEY);
     }
 
     /* Notify another plugins that the theme mode has changed */
@@ -108,7 +122,7 @@
           direction: ModeToggle.ID,
           message: this.modeStatus
         },
-        '*'
+        "*"
       );
     }
 
