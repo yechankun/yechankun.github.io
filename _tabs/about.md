@@ -1,5 +1,4 @@
 ---
-title: PortPolio
 icon: fas fa-info-circle
 order: 4
 ---
@@ -202,7 +201,7 @@ order: 4
     <div class="box_description">
     글로벌 인터넷 방송 서드파티 후원 플랫폼
     <br>
-    전세계 어느 스트리머에게나 0$대 수수료로 후원해서 소통하고 NFT를 뽑아 덕질할 수 있는 플랫폼</div>
+    전세계 어느 개인 방송인에게나 최저 수수료 후원, 실시간 후원 알림, 후원해서 얻은 보너스 포인트로 NFT 뽑기 기능 제공</div>
     <div class="link"><a href="https://github.com/Solniverse/Solniverse/tree/master/exec">깃허브 링크</a></div>
     <div class="link"><a href="https://huisso.notion.site/SOLNIVERSE-e1441567e728438584cf3a88e396ea2b">노션 링크</a></div>
     <div class="date">2022.04 ~ 2022.05</div>
@@ -211,6 +210,7 @@ order: 4
         <li class="item">백엔드</li>
         <ul class="list">
             <li class="item">Express Server 구성 및 Solana RPC WebSocket Server 구성</li>
+            <li> mongoose ODM 구성 및 미들웨어(로깅, jwt 등) 작업</li>
             <li class="item">Interface 추상화, Swagger Open API 3.0 사용</li>
             <li class="item">블록체인 트랜잭션 감지 및 CRUD 기능 구현</li>
             <li class="item">토큰 발행 및 지급 기능 구현</li>
@@ -223,7 +223,7 @@ order: 4
         </ul>
         <li class="item text_dimmed"><i>삼성 청년 SW 아카데미 자율프로젝트 1위</i></li>
         <li class="item text_dimmed"><i>삼성 청년 SW 아카데미 최종 결선진출 입선</i></li>
-        <li class="item text_dimmed"><i>React 17, TypeScript, JavaScript, Express, solana/web3.js, solana/spl-token</i></li>
+        <li class="item text_dimmed"><i>React 17, TypeScript, JavaScript, Express.js, solana/web3.js, solana/spl-token</i></li>
     </ul>
 </div>
 <div class="box">
