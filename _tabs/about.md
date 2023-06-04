@@ -230,7 +230,7 @@ order: 4
     <strong class="box_title">2. 서드도네이션</strong>
     <br/><br/>
     <div class="box_description">
-    장애예술가들의 인식과 작품접근성을 높이고 시장 구조를 개선해 장애인 예술가들의 더 자유롭고 경제적인 시장활동을 지원하는 NFT 거래소</div>
+    블록체인을 활용해 시장 구조를 개선해 장애예술가들에 대한 인식과 작품접근성을 높이고 장애인 예술가들이 더 쉽게 활동을 할 수 있도록 지원하는 NFT 거래소</div>
     <div class="link"><a href="https://github.com/redniche/ThirdDonation">깃허브 링크</a></div>
     <div class="link"><a href="https://redniche.notion.site/c362c3526e8f49d48b56594234573882">노션 링크</a></div>
     <div class="link"><a href="https://user-images.githubusercontent.com/44011226/190913148-b536f1b0-bc54-4b07-acd4-99090d684167.png
@@ -257,7 +257,7 @@ order: 4
     <strong class="box_title">3. 인크라임</strong>
     <br/><br/>
     <div class="box_description">
-    WebRTC를 활용한 유니티 기반 3D 롤플레잉 멀티플레이 게임</div>
+    온라인에서 쉽게 할 수 없는 크라임씬 게임을 WebRTC를 활용한 유니티 기반 3D 롤플레잉 멀티플레이 게임으로 해석한 서비스 개발</div>
     <div class="link"><a href="https://github.com/redniche/INCRIME">깃허브 링크</a></div>
     <div class="link"><a href="https://redniche.notion.site/bf36726088f74c7c862dd2ab69b00141">노션 링크</a></div>
     <div class="date">2022.01.10 ~ 2022.02.18 (6주)</div>
