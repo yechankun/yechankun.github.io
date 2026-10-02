@@ -12,21 +12,9 @@ order: 4
 
 # 👋🏻 안녕하세요!
 
-## <span style="background: #a55ef4;">순식간에 성장하는 개발자</span> 장예찬입니다.
+## <span style="background: #a55ef4;">순식간에 성장하는 개발자</span>입니다.
 
 <img src="https://github.com/yechankun/yechankun/raw/main/zepeto_profile.png" style="width:200px; border-radius:40px; left:10%; min-width:200px">
-
-```json
-{
-  "yechankun": {
-    "realname": "장예찬",
-    "nickname": ["니체", "예찬군"],
-    "phone_number": "010-6532-8972",
-    "email_address": ["redniche@naver.com", "fakerniche@gmail.com"],
-    "birth_date": "1996-10-05"
-  }
-}
-```
 
 ![redniche's GitHub stats](https://github-readme-stats.vercel.app/api?username=yechankun&theme=dark&show_icons=true&disable_animations=true)
 
